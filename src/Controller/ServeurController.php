@@ -46,10 +46,21 @@ class ServeurController extends AbstractController
         ]);
             }  
 
-        /**
-     * @Route("/login", name="login")
+      /*
+     * @Route("/createUser", name="createUser")
      */
-           
+    public function createUser(Request $request, EntityManagerInterface $manager): Response
+    {
+        $User = new Utilisateur();
+        $User->setNom($request->request->get('nom'));
+        $User->setPrenom($request->request->get('prenom'));
+        
+        $manager->persist($User);
+        $manager->flush();
+        return $this->redirectToRoute('login');
+        
+        ]);
+    }  
 
     }
 }
