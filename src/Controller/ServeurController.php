@@ -35,7 +35,7 @@ class ServeurController extends AbstractController
     $exampleInputEmail1=$request->request->get("exampleInputEmail1");
     $exampleInputPassword1=$request->request->get("exampleInputPassword1");
     //Recherche de l'utilisateur dans la base de données
-    $Utilisateur = manager-> getRepository(Utilisateur :: class)->findOneByEmail=>txt 
+    $Utilisateur = manager->getRepository(Utilisateur :: class)->findOneByEmail=>txt 
     //Vérifie si le mot de passe est correct
     if($Utilisateur==NULL){
         return new Response ("Utilisateur".$exampleInputEmail1""$exampleInputPassword1.inconnu)
