@@ -45,15 +45,16 @@ class ServeurController extends AbstractController
 
         ]);
             }  
-
+        }
+    }    
       /*
      * @Route("/createUser", name="createUser")
      */
     public function createUser(Request $request, EntityManagerInterface $manager): Response
     {
         $User = new Utilisateur();
-        $User->setNom($request->request->get('nom'));
-        $User->setPrenom($request->request->get('prenom'));
+        $User->setexampleInputEmail1($request->request->get('exampleInputEmail1'));
+        $User->setexampleInputPassword1($request->request->get('exampleInputPassword1'));
         
         $manager->persist($User);
         $manager->flush();
@@ -62,5 +63,5 @@ class ServeurController extends AbstractController
         ]);
     }  
 
-    }
+    
 }
