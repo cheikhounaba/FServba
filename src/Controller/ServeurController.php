@@ -29,7 +29,7 @@ class ServeurController extends AbstractController
       /**
      * @Route("/login", name="login")
      */
-    public function login(Request $request, EntityManagerInterface $manager, SessionInterface $session):
+    public function login(Request $request, EntityManagerInterface $manager, SessionInterface $session): Response
     //Récupération des infos de login
     {
     $exampleInputEmail1=$request->request->get("exampleInputEmail1");
