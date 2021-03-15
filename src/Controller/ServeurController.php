@@ -35,10 +35,10 @@ class ServeurController extends AbstractController
     $exampleInputEmail1=$request->request->get("exampleInputEmail1");
     $exampleInputPassword1=$request->request->get("exampleInputPassword1");
     //Recherche de l'utilisateur dans la base de données
-    $reponse = manager->getRepository(utilisateur :: class)->findOneByEmail=>txt 
+    $reponse = manager->getRepository(utilisateur :: class)->findOneBy([ ’exampleInputmail’ => ‘txt’]); 
     //Vérifie si le mot de passe est correct
     if($utilisateur==NULL){
-        return new Response ("Utilisateur".$exampleInputEmail1""$exampleInputPassword1.inconnu)
+        return new Response ("utilisateur".$exampleInputEmail1""$exampleInputPassword1.inconnu)
         else{
             return $this->render('serveur/index.html.twig'), [
             'controller_name' => 'ServeurController',
